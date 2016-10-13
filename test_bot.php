@@ -12,8 +12,12 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			//$text = $event['message']['text'];
-			$text = "ยัง ทำให้กินหน่อย"
+			$text = $event['message']['text'];
+			if ($text == 'eat?'){
+				$text = 'yes'
+			}else{
+				$text = 'no'
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
